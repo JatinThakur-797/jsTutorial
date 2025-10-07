@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exersice 3</title>
+</head>
+
+<body>
+    <h1 class="greetings"></h1>
+
+    <button class="myButton" onclick="increment()">count : </button>
+    <button class="reset" onclick="localStorage.clear() ; count = 0;">Reset Count</button>
+    <script>
+
+        let count = localStorage.getItem('count');
+        function increment() {
+            count++;
+            if(count %2 == 0){
+                document.querySelector('.myButton').style.backgroundColor = '#42dd63';
+            }else{
+                document.querySelector('.myButton').style.backgroundColor = '#00fcff';
+
+            }
+            document.querySelector('.myButton').innerText = `count : ${count}`;
+            
+            localStorage.setItem('count', count);
+
+        }
+
+
+
+        let name = 'Jatin';
+        let myDate = new Date();
+        let hours = myDate.getHours();
+        let greet = ""
+        if (hours >= 5 && hours < 12) {
+            greet = 'Good Morning';
+        } else if (hours >= 12 && hours < 17) {
+            greet = 'Good After Noon';
+        } else if (hours >= 17 && hours < 20) {
+            greet = 'Good Evening';
+        } else {
+            greet = 'Good Night';
+        }
+        document.querySelector('.greetings').innerHTML = `${greet} ${name} , Welcome To our Web `;
+
+    </script>
+</body>
+
+</html>
