@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main_heading {
+            text-align: center;
+
+        }
+        body{
+            background-color: rgb(0, 221, 255);
+        }
+
+        .todo {
+           
+            width: 60vw;
+            min-height: 80vh;
+            max-height: fit-content;
+            margin: auto;
+            background-color: rgba(159, 255, 255, 0.6);
+            border: 20px solid rgba(0, 255, 255, 0.798);
+            border-radius: 10% 20% ;
+        }
+
+        input {
+            width: 17vw;
+            height: 40px;
+            font-size: large;
+            font-weight: 600;
+
+        }
+
+        #date-time {
+            width: 10vw;
+
+        }
+
+        .todo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .todo-display {
+            width: 50vw;
+        }
+
+        .todo-display form {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .items {
+            display: grid;
+            gap: 74px;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-size: x-large;
+            font-weight: 600;
+
+
+        }
+
+        button,
+        #button {
+            width: 10vw;
+            height: 40px;
+            font-size: large;
+            font-weight: 600;
+            background-color: rgb(255, 124, 84);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(251, 59, 0);
+        }
+        #button:hover{
+            background-color: rgb(0, 255, 119);
+        }
+        #button{
+             background-color: rgb(84, 255, 164);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo">
+        <h1 class="main_heading">Welcome In ToDo App</h1>
+     
+        <div class="todo-display">
+            <form action="#">
+                <input id="todo-input" type="text" placeholder="Enter Your Todo here" required >
+                <input id="date-time" type="datetime-local" required>
+                <input type="submit" id="button" onclick="addTodo()">
+            </form>
+        </div>
+
+
+        <div class="todo-list">
+        </div>
+
+
+    </div>
+
+
+    <script>
+        let todoList = ['Buy a Milk', 'Go to college'];
+        let dateArr = ['2025-10-07T10:29', '2025-10-08T06:29']
+        displayItems();
+        function addTodo() {
+            let inputElement = document.querySelector("#todo-input");
+            let date = document.querySelector('#date-time').value;
+            let todoItem = inputElement.value;
+            inputElement.value = '';
+            todoList.push(todoItem);
+            dateArr.push(date);
+            displayItems();
+        }
+        function displayItems() {
+            let listElement = document.querySelector('.todo-list');
+
+            let newHtml = '';
+
+            for (let i = 0; i < todoList.length; i++) {
+                newHtml += `<div class="items item-${i + 1}">
+                            <span>${todoList[i]}</span>
+                            <span> ${dateArr[i]} </span>
+                            <button id = "delete" onclick = "todoList.splice(${i} ,1); dateArr.splice(${i} ,1); displayItems();">Delete</button>
+                            
+                        </div>`
+
+
+
+            }
+            listElement.innerHTML = newHtml;
+
+        }
+    </script>
+</body>
+
+</html>
