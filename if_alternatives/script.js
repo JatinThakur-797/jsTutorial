@@ -12,6 +12,6 @@ console.log(result);
 
  //Default Operator
 
- age = undefined ;
+age = undefined ;
 finalAge = age ?? 19;
 console.log(finalAge);

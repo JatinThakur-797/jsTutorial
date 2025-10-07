@@ -55,16 +55,18 @@
             background-color: rgb(134, 134, 162);
         }
     </style>
+
 </head>
 
 <body>
     <div class="game">
 
         <h1>Welcome to Rock Paper Sessior</h1>
+        <h1 class="score"></h1>
         <div class="choose">
-            <button onclick="cRandom(); chooseRock('rock'); win();"><img src="img/rock.png" alt=""> Rock</button>
-            <button onclick="cRandom(); choosePaper('paper'); win(); "> <img src="img/paper.png" alt="">Paper</button>
-            <button onclick="cRandom(); chooseScissor('scisser') ; win();"><img src="img/scisser.png" alt="">
+            <button onclick="cRandom(); chooseRock('rock'); winMethod(); checkWin()"><img src="img/rock.png" alt=""> Rock</button>
+            <button onclick="cRandom(); choosePaper('paper'); winMethod(); checkWin() "> <img src="img/paper.png" alt="">Paper</button>
+            <button onclick="cRandom(); chooseScissor('scisser') ; winMethod(); checkWin()"><img src="img/scisser.png" alt="">
                 Scisser</button>
         </div>
 
@@ -87,84 +89,10 @@
             </div>
         </div>
         <h1 class="winMessage"></h1>
+        
     </div>
 
-    <script>
-
-        let ran = 0;
-        let computer = "rock";
-        function cRandom() {
-            ran = Math.random() * 10;
-            if (ran >= 1 && ran < 4) {
-                computer = "rock";
-            } else if (ran >= 4 && ran < 7) {
-                computer = "paper";
-            } else {
-                computer = "scisser";
-            }
-        }
-        let b = '';
-        function chooseRock(a) {
-            b = a;
-        }
-
-        function choosePaper(a) {
-            b = a;
-        }
-        function chooseScissor(a) {
-            b = a;
-        }
-
-        function win() {
-
-            document.querySelector('.choice').classList.add('active');
-
-            if (b == computer) {
-                document.querySelector('.box1').style.backgroundImage = `url(img/${b}.png)`;
-                document.querySelector('.box2').style.backgroundImage = `url(img/${b}.png)`;
-
-                document.querySelector('.winMessage').innerHTML = `So This Gonna Tie 😔`
-                document.querySelector('.your_c').innerHTML = b;
-                document.querySelector('.com_c').innerHTML = computer;
-
-            } else if (b == 'rock' && computer == 'scisser') {
-                document.querySelector('.box1').style.backgroundImage = `url(img/${b}.png)`;
-                document.querySelector('.box2').style.backgroundImage = `url(img/${computer}.png)`;
-
-                document.querySelector('.winMessage').innerHTML = ` You win 😀`
-                document.querySelector('.your_c').innerHTML = b;
-                document.querySelector('.com_c').innerHTML = computer;
-            }
-            else if (b == 'paper' && computer == 'rock') {
-                document.querySelector('.box1').style.backgroundImage = `url(img/${b}.png)`;
-                document.querySelector('.box2').style.backgroundImage = `url(img/${computer}.png)`;
-
-                document.querySelector('.winMessage').innerHTML = `You win 😀`;
-                document.querySelector('.your_c').innerHTML = b;
-                document.querySelector('.com_c').innerHTML = computer;
-            } else if (b == 'scisser' && computer == 'paper') {
-                document.querySelector('.box1').style.backgroundImage = `url(img/${b}.png)`;
-                document.querySelector('.box2').style.backgroundImage = `url(img/${computer}.png)`;
-
-                document.querySelector('.winMessage').innerHTML = `You win 😀`;
-                document.querySelector('.your_c').innerHTML = b;
-                document.querySelector('.com_c').innerHTML = computer;
-            } else {
-                document.querySelector('.box1').style.backgroundImage = `url(img/${b}.png)`;
-                document.querySelector('.box2').style.backgroundImage = `url(img/${computer}.png)`;
-
-                document.querySelector('.winMessage').innerHTML = ` You Loose 🥹`;
-                document.querySelector('.your_c').innerHTML = b;
-                document.querySelector('.com_c').innerHTML = computer;
-
-            }
-        }
-
-
-
-
-
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
