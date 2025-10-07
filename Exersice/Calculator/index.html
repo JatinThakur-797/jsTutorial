@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+        .calculator {
+            border: 2px solid black;
+            width: 30%;
+            height: 70vh;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+
+        .header {
+
+            width: 100%;
+            height: 15%;
+            border-radius: 20px;
+
+
+            margin-bottom: -1px;
+        }
+
+        .header input {
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 20px 20px 0px 0px;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 20px;
+            /* border-radius: 20px; */
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 85%;
+            border: 1px solid black;
+            box-sizing: border-box;
+            border-radius: 0px 0px 20px 20px;
+
+        }
+
+        .btn {
+            width: 5vw;
+            margin: auto;
+            height: 3.5vw;
+            margin: 5px 10px;
+            box-sizing: border-box;
+            font-size: large;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="header">
+            <input type="text" name="display" id="display">
+        </div>
+        <div class="main">
+            <div class="group-1 group">
+                <button class="btn btn1">%</button>
+                <button class="btn btn2">CE</button>
+                <button class="btn btn3" onclick="c = '0';  document.querySelector('#display').value = c; ">C</button>
+                <button class="btn btn4"
+                    onclick="if(c.length != 1) c = c.substring(0, c.length - 1); else c = 0;  document.querySelector('#display').value = c; ">X</button>
+            </div>
+
+            <div class="group-2 group">
+                <button class="btn btn1">1/x</button>
+                <button class="btn btn2">x<sup>2</sup></button>
+                <button class="btn btn3">2&radic;x</button>
+                <button class="btn btn4" onclick=" c+='/'; document.querySelector('#display').value = c; ">/</button>
+            </div>
+            <div class="group-3 group">
+                <button class="btn btn1"
+                    onclick="if(c=='0') c = '7'; else c+='7'; document.querySelector('#display').value = c; ">7</button>
+                <button class="btn btn2"
+                    onclick="if(c=='0') c = '8'; else c+='8'; document.querySelector('#display').value = c; ">8</button>
+                <button class="btn btn3"
+                    onclick="if(c=='0') c = '9'; else c+='9'; document.querySelector('#display').value = c; ">9</button>
+                <button class="btn btn4" onclick=" c+='*'; document.querySelector('#display').value = c; ">*</button>
+            </div>
+            <div class="group-4 group">
+                <button class="btn btn1"
+                    onclick="if(c=='0') c = '4'; else c+='4'; document.querySelector('#display').value = c; ">4</button>
+                <button class="btn btn2"
+                    onclick="if(c=='0') c = '5'; else c+='5'; document.querySelector('#display').value = c; ">5</button>
+                <button class="btn btn3"
+                    onclick="if(c=='0') c = '6'; else c+='6'; document.querySelector('#display').value = c; ">6</button>
+                <button class="btn btn4"
+                    onclick="if(c=='0') c = '-'; else c+='-'; document.querySelector('#display').value = c; ">-</button>
+            </div>
+            <div class="group-5 group">
+                <button class="btn btn1"
+                    onclick="if(c=='0') c = '1'; else c+='1'; document.querySelector('#display').value = c; ">1</button>
+                <button class="btn btn2"
+                    onclick="if(c=='0') c = '2'; else c+='2'; document.querySelector('#display').value = c; ">2</button>
+                <button class="btn btn3"
+                    onclick="if(c=='0') c = '3'; else c+='3'; document.querySelector('#display').value = c; ">3</button>
+                <button class="btn btn4" onclick="c+='+'; document.querySelector('#display').value = c; ">+</button>
+            </div>
+            <div class="group-6 group">
+                <button class="btn btn1">+/-</button>
+                <button class="btn btn1"
+                    onclick="if(c=='0') c = '0'; else c+='0'; document.querySelector('#display').value = c; ">0</button>
+                <button class="btn btn1" onclick="c+='.'; document.querySelector('#display').value = c; ">.</button>
+                <button class="btn btn1"
+                    onclick="let result = eval(c); c = result; document.querySelector('#display').value = result; ">=</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let c = '0';
+        document.querySelector('#display').value = c;
+
+    </script>
+</body>
+
+</html>

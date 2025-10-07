@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-button {
+            width: 80vw;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            gap: 50px;
+        }
+
+        .btn {
+            padding: 10px;
+            font-size: medium;
+            font-weight: 500;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 2px solid black;
+            border-radius: 30px 30px;
+            width: 20%;
+        }
+
+        .btn-1 {
+            color: rgb(0, 0, 0);
+            background-color: rgb(33, 203, 181);
+        }
+
+        .btn-2 {
+            background-color: rgb(134, 85, 85);
+        }
+
+        .btn-3 {
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-button">
+        <button onclick="a++; document.querySelector('#h1-tag').innerHTML = `Your bag has ${a} items :`"
+            class="btn btn-1">Add to Bag</button>
+        <button
+            onclick="if(a<=0){a=0; alert(`card is empty`);} else  a--; document.querySelector('#h1-tag').innerHTML = `Your bag has ${a} items :`"
+            class="btn btn-2">Move to WishList</button>
+        <button onclick="a+=2; document.querySelector('#h1-tag').innerHTML = `Your bag has ${a} items :`"
+            class="btn btn-3"> Add 1 + 1 to bag</button>
+    </div>
+    <h1 id="h1-tag"></h1>
+    <script>
+        let a = 0;
+        document.querySelector('#h1-tag').innerText = `Your bag has ${a} items :`
+    </script>
+
+</body>
+
+</html>
