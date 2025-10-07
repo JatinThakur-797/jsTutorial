@@ -38,7 +38,7 @@
                 document.querySelector('.your_c').innerHTML = b;
                 document.querySelector('.com_c').innerHTML = computer;
 
-                count++; win++; loose++;
+                
                 document.querySelector('.score').innerHTML = `Total : ${total} Win : ${win} Loose : ${loose}`;
 
             } else if (b == 'rock' && computer == 'scisser') {
@@ -92,14 +92,19 @@
                 
                 win = 0;
                 loose = 0;
+                count = 0;
             }
             else if(win == loose){
                 alert('Game is Tie 😔😔😔😔😔');
+                 win = 0;
+                loose = 0;
+                count = 0;
             }
             else{
                 alert('You loose 🥹🥹🥹🥹🥹');
-                win = 0;
+                 win = 0;
                 loose = 0;
+                count = 0;
             }
         }
         }

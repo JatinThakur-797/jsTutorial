@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="myButton" >hello</button>
+    <div class="c">My Div</div>
+
+    <script>
+        document.title = "Dom Manipulation"
+        let button = document.createElement("button");
+        button.innerText = "click me";
+        document.querySelector('.c').appendChild(button);
+        document.querySelector('.c').removeChild(button);
+
+
+        //Dom Properties
+        //1. Location
+        //2. title
+        //3. href
+        //4. domain
+        //5. innerHTML
+        //6. innerText
+        //7. classList
+
+        //Dom And Elemennt Methods
+        //1. getElementById()
+        //2. getElementByClass()
+        //3. getElementByName()
+        //4. querrySelector()
+        //5. classList: add() , remove()
+        //6. createElement()
+        //7. appendChild()
+        //8. removeChild()
+        //9. replaceChild()
+    </script>
+</body>
+</html>
