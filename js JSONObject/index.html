@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let ob = {
+            name: 'sam',
+            age: '18',
+            city: 'Dhar',
+            street: 'Malti Road',
+            Cast: 'Gen',
+
+
+        }
+        console.log(ob);
+        let str = JSON.stringify(ob);
+        console.log(str);
+        console.log(JSON.parse(str));
+
+        // localStorage.setItem('Name', 'KGCoding');
+        // localStorage.setItem('Price' , '18000');
+
+        console.log(localStorage.getItem('Name'));
+    </script>
+</body>
+
+</html>

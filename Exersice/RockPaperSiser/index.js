@@ -89,6 +89,7 @@
             if(win + loose >= 10 || count>=10){
                 if(win>loose){
                 alert('You Win🎈🎈🎈🎆🎇✨');
+                
                 win = 0;
                 loose = 0;
             }
